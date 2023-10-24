@@ -12,7 +12,7 @@ import scifi from '../Books/scifi.json'
 const AllTheBooks = ()=>{
     return (
         <Container fluid>
-            <h2 className='mt-3'>Top libri Fantasy</h2>
+            <h2 className='mt-4'>Top libri Fantasy</h2>
             <Row className='justify-content-center'>
                 
         
@@ -20,8 +20,8 @@ const AllTheBooks = ()=>{
                 fantasy.map((book,index )=> {
                     if(index < 6){
                     return (
-                        <Col key={book.asin} md={4} xl={2}>
-                    <Card className='mt-4'>
+                        <Col key={book.asin} md={4} xl={2} className='mt-1'>
+                    <Card className='h-100'>
                     <Card.Img variant="top" src={book.img} className='h-75'/>
                             <Card.Body>
                               <Card.Title className='text-nowrap text-truncate'>{book.title}</Card.Title>
@@ -37,16 +37,16 @@ const AllTheBooks = ()=>{
             }  
         </Row>
 
-        <h2 className='mt-3'>Top libri Storici </h2>
+        <h2 className='mt-4'>Top libri Storici </h2>
         <Row className='justify-content-center'>
                 
         
                 {
-                    horror.map((book,index )=> {
+                    history.map((book,index )=> {
                         if(index < 6){
                         return (
-                            <Col key={book.asin} md={4} xl={2}>
-                        <Card className='mt-4 h-100'>
+                            <Col key={book.asin} md={4} xl={2} className='mt-1'>
+                        <Card className='h-100'>
                             <Card.Img variant="top" src={book.img} className='h-75'/>
                             <Card.Body>
                               <Card.Title className='text-nowrap text-truncate'>{book.title}</Card.Title>
@@ -61,7 +61,7 @@ const AllTheBooks = ()=>{
                     })
                 }  
             </Row>
-            <h2 className='mt-3'> Top libri Horror</h2>
+            <h2 className='mt-4'> Top libri Horror</h2>
             <Row className='justify-content-center'>
                 
         
@@ -70,7 +70,7 @@ const AllTheBooks = ()=>{
                         if(index < 6){
                         return (
                             <Col key={book.asin} md={4} xl={2}>
-                        <Card className='mt-4'>
+                        <Card className='mt-1 h-100'>
                         <Card.Img variant="top" src={book.img} className='h-75'/>
                             <Card.Body>
                               <Card.Title className='text-nowrap text-truncate'>{book.title}</Card.Title>
@@ -85,7 +85,7 @@ const AllTheBooks = ()=>{
                     })
                 }  
             </Row>
-            <h2 className='mt-3'>Top libri Romantici</h2>
+            <h2 className='mt-4'>Top libri Romantici</h2>
             <Row >
                 
         
@@ -94,7 +94,7 @@ const AllTheBooks = ()=>{
                         if(index < 6){
                         return (
                             <Col key={book.asin} md={4} xl={2}>
-                        <Card className='mt-4'>
+                        <Card className='mt-1 h-100'>
                         <Card.Img variant="top" src={book.img} className='h-75'/>
                             <Card.Body>
                               <Card.Title className='text-nowrap text-truncate'>{book.title}</Card.Title>
@@ -109,7 +109,7 @@ const AllTheBooks = ()=>{
                     })
                 }  
             </Row>
-            <h2 className='mt-3'>Top libri Fantasy</h2>
+            <h2 className='mt-4'>Top libri Fantasy</h2>
             <Row className='justify-content-center'>
                 
         
@@ -118,7 +118,7 @@ const AllTheBooks = ()=>{
                         if(index < 6){
                         return (
                             <Col key={book.asin} md={4} xl={2}>
-                        <Card className='mt-4'>
+                        <Card className='mt-1 h-100'>
                         <Card.Img variant="top" src={book.img} className='h-75'/>
                             <Card.Body>
                               <Card.Title className='text-nowrap text-truncate'>{book.title}</Card.Title>
