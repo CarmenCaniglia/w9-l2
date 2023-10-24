@@ -32,7 +32,7 @@ const AllTheBooks = ()=>{
                         </Card.Body>
                         </Card>
                         </Col>
-                    )}
+                    )} else {return null;}
                 })
             }  
         </Row>
@@ -57,7 +57,7 @@ const AllTheBooks = ()=>{
                             </Card.Body>
                             </Card>
                             </Col>
-                        )}
+                        )}else {return null;}
                     })
                 }  
             </Row>
@@ -81,7 +81,7 @@ const AllTheBooks = ()=>{
                             </Card.Body>
                             </Card>
                             </Col>
-                        )}
+                        )}else {return null;}
                     })
                 }  
             </Row>
@@ -105,7 +105,7 @@ const AllTheBooks = ()=>{
                             </Card.Body>
                             </Card>
                             </Col>
-                        )}
+                        )}else {return null;}
                     })
                 }  
             </Row>
@@ -129,7 +129,7 @@ const AllTheBooks = ()=>{
                             </Card.Body>
                             </Card>
                             </Col>
-                        )}
+                        )}else {return null;}
                     })
                 }  
             </Row>
