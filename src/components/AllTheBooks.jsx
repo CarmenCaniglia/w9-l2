@@ -26,7 +26,7 @@ const AllTheBooks = ()=>{
                             <Card.Body>
                               <Card.Title className='text-nowrap text-truncate'>{book.title}</Card.Title>
                           <Card.Text>
-                           {book.price}
+                           {book.price}€
                           </Card.Text>
                           <Button variant="primary">Compralo ora!</Button>
                         </Card.Body>
@@ -51,7 +51,7 @@ const AllTheBooks = ()=>{
                             <Card.Body>
                               <Card.Title className='text-nowrap text-truncate'>{book.title}</Card.Title>
                               <Card.Text>
-                               {book.price}
+                               {book.price}€
                               </Card.Text>
                               <Button variant="primary">Compralo ora!</Button>
                             </Card.Body>
@@ -75,7 +75,7 @@ const AllTheBooks = ()=>{
                             <Card.Body>
                               <Card.Title className='text-nowrap text-truncate'>{book.title}</Card.Title>
                               <Card.Text>
-                               {book.price}
+                               {book.price}€
                               </Card.Text>
                               <Button variant="primary">Compralo ora!</Button>
                             </Card.Body>
@@ -99,7 +99,7 @@ const AllTheBooks = ()=>{
                             <Card.Body>
                               <Card.Title className='text-nowrap text-truncate'>{book.title}</Card.Title>
                               <Card.Text>
-                               {book.price}
+                               {book.price}€
                               </Card.Text>
                               <Button variant="primary">Compralo ora!</Button>
                             </Card.Body>
@@ -123,7 +123,7 @@ const AllTheBooks = ()=>{
                             <Card.Body>
                               <Card.Title className='text-nowrap text-truncate'>{book.title}</Card.Title>
                               <Card.Text>
-                               {book.price}
+                               {book.price}€
                               </Card.Text>
                               <Button variant="primary">Compralo ora!</Button>
                             </Card.Body>
