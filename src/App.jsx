@@ -5,6 +5,9 @@ import MyNav from "./components/MyNav";
 import Footer from "./components/Footer";
 import Welcome from "./components/Welcome";
 import AllTheBooks from "./components/AllTheBooks";
+import SingleBook from "./components/SingleBook";
+import BookList from "./components/BookList";
+import book from "../src/Books/fantasy.json"
 
 
 function App() {
@@ -14,7 +17,8 @@ function App() {
     <Welcome/>
     </header>
     <main>
-    <AllTheBooks/>
+    <SingleBook/>
+    <BookList books={book}/>
     </main>
     <footer>
     <Footer/>
