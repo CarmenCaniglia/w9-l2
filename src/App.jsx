@@ -4,10 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MyNav from "./components/MyNav";
 import Footer from "./components/Footer";
 import Welcome from "./components/Welcome";
-import AllTheBooks from "./components/AllTheBooks";
-import SingleBook from "./components/SingleBook";
+// import AllTheBooks from "./components/AllTheBooks";
+// import SingleBook from "./components/SingleBook";
 import BookList from "./components/BookList";
-import book from "../src/Books/fantasy.json"
+import fantasyBook from "../src/Books/fantasy.json"
 
 
 function App() {
@@ -17,8 +17,9 @@ function App() {
     <Welcome/>
     </header>
     <main>
-    <SingleBook/>
-    <BookList books={book}/>
+    {/* <SingleBook book={fantasyBook[0]}/> */}
+    <BookList manyBooks={fantasyBook}/>
+    {/* manyBooks è un array */}
     </main>
     <footer>
     <Footer/>

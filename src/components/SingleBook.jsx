@@ -1,28 +1,34 @@
-import { Card, Col, Container, Row } from "react-bootstrap"
+import { Component } from "react"
+import { Card, Button } from "react-bootstrap"
 
-import book from "../Books/fantasy.json"
+class SingleBook extends Component {
+  
+  state={
+    selected: false,
+  }
 
-
-const SingleBook = (props)=>{
-const randomIndex = Math.floor(Math.random()*book.length);
-const randomBook = book[randomIndex]
-
-    props=randomBook
-    return(
-        <Container>
-            <Row>
-                <Col md={6} xl={2} key={props.asin}>
-                <Card>
-      <Card.Img variant="top" src={props.img} alt={props.title} />
-      <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-      </Card.Body>
-    </Card>
-                </Col>
-            </Row>
-        </Container>
-
-        
+  toggleSelected = ()=>{
+    this.setState({
+      selected: !this.state.selected
+    })
+  }
+  
+  // recupero book dentro props, quindi props.book perchè props è l'oggetto che contiene book
+  render (){
+    return (
+      <Card >
+        <Card.Img variant="top" src={this.props.book.img} onClick={this.toggleSelected} className={this.state.selected ? 'red-border': ''}/>
+        <Card.Body>
+          <Card.Title>{this.props.book.title}</Card.Title>
+          <Card.Text>
+         {this.props.book.category}
+          </Card.Text>
+          <Button variant="primary">€ {this.props.book.price}</Button>
+        </Card.Body>
+      </Card>
     )
+  }
 }
+ 
+
 export default SingleBook

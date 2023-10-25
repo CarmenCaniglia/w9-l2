@@ -1,42 +1,48 @@
-import { Component } from "react";
-import SingleBook from "./SingleBook";
-import { Col, Container, Row } from "react-bootstrap";
-import fantasy from "../Books/fantasy.json"
+import { Col, Container, Row , Form} from "react-bootstrap"
+import SingleBook from "./SingleBook"
+import { Component } from "react"
 
 class BookList extends Component {
-    state= {
-        books: fantasy, //array di libri
-        filteredBooks:fantasy, // array di libri per la ricerca
-        searchInput: ''
+    
+    state={
+        searchValue: ''
     }
-handleSearchInput = (e) =>{
-    const searchInput = e.target.value;
-    this.setState({searchInput}, ()=>{
-        this.filteredBooks(searchInput)
-    })
-}
-filteredBooks = (searchInput)=>{
-    const { books } = this.state;
-    const filteredBooks = books.map((book)=>
-    book.title.toLowerCase().includes(searchInput.toLowerCase())
-    )
-    this.setState({filteredBooks})
-}
 
-    render (){
-        // riceve array di libri?
-    const {filteredBooks, searchInput}=this.state;
- 
+    render() {
     return(
         <Container>
-            
-            <Row>
-                <Col className="mt-5">
-                <input type="text" placeholder="Search..." value={searchInput} onChange={this.handleSearchInput}/>
-                {filteredBooks.map((book, index) => (<SingleBook key={index} book={book}/>))}
+            <Row className="justify-content-center">
+                <Col md={6}>
+                    <Form.Group className="mb-3">
+                        <Form.Control 
+                        type="text" 
+                        placeholder="Search a book..."
+                        value={this.state.searchValue}
+                        onChange={e =>{
+                            this.setState({
+                                searchValue:e.target.value
+                            })
+                        }} />
+                    </Form.Group>
                 </Col>
+             </Row>
+            <Row>
+                {/* faccio un map su tutti i libri...dopo il map bisogna assegnare la key */}
+                {this.props.manyBooks.filter(oneBook => oneBook.title.toLowerCase().includes(this.state.searchValue.toLowerCase()))
+        .map(oneBook =>{
+            return <Col md={3} key={oneBook.asin}>
+                 <SingleBook book={oneBook}/>
+                 </Col>
+            // ho ciclato un array di libri, mi viene fornito un libro alla volta, per ogni libro renderizzo singleBook passando quel libro. Così sono montati uno alla volta e mostrati nella pagina
+        })
+      }
             </Row>
         </Container>
+
+        
     )
-}}
+    }
+}
+
+
 export default BookList
