@@ -1,8 +1,9 @@
 import { ListGroup } from "react-bootstrap"
 
-const SingleComment = ({props})=> {
+const SingleComment = ({singleReview})=> {
     return (
-        <ListGroup.Item>{props.comment.comment}</ListGroup.Item>
+        <ListGroup.Item>{singleReview.rate} | {singleReview.comment}
+        </ListGroup.Item>
     )
 }
 

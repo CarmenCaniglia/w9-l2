@@ -8,7 +8,7 @@ import Welcome from "./components/Welcome";
 // import SingleBook from "./components/SingleBook";
 import BookList from "./components/BookList";
 import fantasyBook from "../src/Books/fantasy.json"
-import AddComment from "./components/AddComment";
+
 
 
 function App() {
@@ -18,7 +18,6 @@ function App() {
     <Welcome/>
     </header>
     <main>
-      <AddComment/>
     {/* <SingleBook book={fantasyBook[0]}/> */}
     <BookList manyBooks={fantasyBook}/>
     {/* manyBooks è un array */}

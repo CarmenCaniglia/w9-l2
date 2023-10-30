@@ -17,6 +17,7 @@ class SingleBook extends Component {
   // recupero book dentro props, quindi props.book perchè props è l'oggetto che contiene book
   render (){
     return (
+      <>
       <Card >
         <Card.Img 
           variant="top" 
@@ -30,8 +31,11 @@ class SingleBook extends Component {
           </Card.Text>
           <Button variant="primary">€ {this.props.book.price}</Button>
         </Card.Body>
-        {this.state.selected && <CommentArea/>}
       </Card>
+      <div>
+      {this.state.selected && <CommentArea bookId={this.props.book.asin}/>}
+      </div>
+      </>
     )
   }
 }

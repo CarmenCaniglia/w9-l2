@@ -1,18 +1,20 @@
 import { Component } from "react";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 class AddComment extends Component{
     
     state={
       comments:{
         comment:'',
         rate:'1',
-       
+        elementId: this.props.bookId
       }
     }
     
   handleInputChange = (property, value)=>{
     this.setState({
-        [property]:value,
+      comments:{
+      ...this.state.comments,
+        [property]:value,}
     })
   }
 
@@ -30,10 +32,13 @@ class AddComment extends Component{
             }
         })
         if (res.ok){
+          alert('Commento salvato')
             this.setState({
                 comments:{
                     comment:'',
-                    rate:'1'
+                    rate:'1',
+                    elementId: this.props.bookId,
+
                 }
             })
         }else{
@@ -46,32 +51,24 @@ class AddComment extends Component{
 
     render(){
         return(
-            <Container>
-                <Row>
-                    <Col>
-                    <h3>Aggiungi un commento:</h3>
+           
             <Form onSubmit={this.handleFormSubmit}>
-            <Form.Group className="mb-3" >
+            <Form.Group className="mt-4 mb-1" >
               <Form.Label>Comment:</Form.Label>
               <Form.Control 
               type="text" 
               placeholder="il tuo commento..." 
               value={this.state.comments.comment}
-              onChange={(e)=> {
-                this.setState({
-                    comments:{
-                        ...this.state.comments, comment: e.target.value
-                    }
-                })
-              }}
+              onChange={(e) => this.handleInputChange('comment', e.target.value)}
               required/>
             </Form.Group>
-            
+            <Form.Group className="mb-3" >
+            <Form.Label>Rating:</Form.Label>
             <Form.Select 
             aria-label="Valutazione" 
             className="mb-3"
             value={this.state.comments.rate}
-            onChange={(e)=>this.handleInputChange('rate', e.target.value)}
+            onChange={(e) => this.handleInputChange('rate', e.target.value)}
             >
             <option >1</option>
             <option >2</option>
@@ -79,13 +76,12 @@ class AddComment extends Component{
             <option >4</option>
             <option >5</option>
             </Form.Select>
+            </Form.Group>
             <Button variant="primary" type="submit">
-              Submit
+              Invia
             </Button>
           </Form>
-          </Col>
-          </Row>
-          </Container>
+         
         )
     }
 }
